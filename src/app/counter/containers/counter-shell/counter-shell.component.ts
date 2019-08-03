@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { CounterState } from '../../state';
@@ -7,7 +7,8 @@ import * as counterSelectors from './../../state/selectors';
 
 @Component({
   selector: 'app-counter-shell',
-  templateUrl: './counter-shell.component.html'
+  templateUrl: './counter-shell.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CounterShellComponent {
   count$: Observable<number>;

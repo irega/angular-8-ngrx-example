@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Hero } from '../../hero';
 import { Observable } from 'rxjs';
 import { HeroState } from '../../state';
@@ -8,7 +8,8 @@ import * as heroSelectors from './../../state/selectors';
 
 @Component({
   selector: 'app-hero-shell',
-  templateUrl: './hero-shell.component.html'
+  templateUrl: './hero-shell.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroShellComponent implements OnInit {
   heroes$: Observable<Hero[]>;

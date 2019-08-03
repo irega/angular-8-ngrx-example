@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  templateUrl: './shell.component.html'
+  templateUrl: './shell.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShellComponent {
 }
