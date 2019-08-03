@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MyCounterComponent } from './my-counter/my-counter.component';
+import { ShellComponent } from './home/shell.component';
 
 
 const routes: Routes = [
-  { path: 'my-counter', component: MyCounterComponent }
+  {
+    path: '',
+    component: ShellComponent,
+    children: [
+      {
+        path: 'counter',
+        loadChildren: './counter/counter.module#CounterModule'
+      }
+    ]
+  }
 ];
 
 @NgModule({
