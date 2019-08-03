@@ -9,6 +9,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HeroData } from './heroes/hero-data';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,11 @@ import { EffectsModule } from '@ngrx/effects';
     HttpClientInMemoryWebApiModule.forRoot(HeroData),
     AppRoutingModule,
     StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      name: 'Angular 8 ngRx Example',
+      maxAge: 25,
+      logOnly: environment.production
+    }),
     EffectsModule.forRoot([])
   ],
   providers: [],

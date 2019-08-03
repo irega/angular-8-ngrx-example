@@ -24,7 +24,8 @@
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1",
     "@ngrx/store": "8.2.0",
-    "@ngrx/effects": "8.2.0"
+    "@ngrx/effects": "8.2.0",
+    "@ngrx/store-devtools": "8.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.1",
