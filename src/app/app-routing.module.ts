@@ -11,6 +11,10 @@ const routes: Routes = [
       {
         path: 'counter',
         loadChildren: './counter/counter.module#CounterModule'
+      },
+      {
+        path: 'heroes',
+        loadChildren: './heroes/hero.module#HeroModule'
       }
     ]
   }

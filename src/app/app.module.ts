@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { ShellComponent } from './home/shell.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HeroData } from './heroes/hero-data';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -12,9 +16,12 @@ import { ShellComponent } from './home/shell.component';
     ShellComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    HttpClientInMemoryWebApiModule.forRoot(HeroData),
     AppRoutingModule,
-    StoreModule.forRoot({})
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
